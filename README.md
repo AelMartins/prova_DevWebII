@@ -13,3 +13,10 @@ Em seguida, criei a pasta server para preparar o ambiente de conexção com o ba
 Criei o arquivo `.gitignore` que por motivos de acadêmicos, mantive os arquivos confidênciais pendentes de compartilhamento. Esses arquivos estão armazenados na pasta `data-base`, neles estão as informações necessárias para efetuar a conexção com  o banco de dados. Por motivos óbvios, os dados presentes neles são falsos, mas a estrutura está correta.
 
 Também criei o arquivo `index.js` que armazenarei as configurações para o CRUD e, referente a ele, adicionei um "start" no "scripts" do `package.json`.
+
+# `.gitignore`
+
+Praticamente eu segui o que já veio padronizado pelo VUE na pasta `client`. E na pasta `server` eu o utilizei mais por questões estruturais do que evitar enviar os dados. No geral você deve ficar atento aos `node_modules` que foram os mais frizados quando baixar o repositório e tentar rodar em sua máquina.
+
+
+- Meus agradecimentos a quem se interessou pelo meu trabalho, para `VOCÊ` tudo de melhor sempre! 
