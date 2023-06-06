@@ -2,22 +2,24 @@
   <div class="container">
 
      <h2>REGISTRO DE USUÁRIO</h2>
+     <div class="line"></div>
 
      <form @submit.prevent="registrarUsuario" class="form">
 
-       <label for="name">NOME:</label>
+       <label for="name">NOME</label>
        <input type="text" id="name" v-model="name" required>
 
-       <label for="email">E-MAIL:</label>
+       <label for="email">E-MAIL</label>
        <input type="email" id="email" v-model="email" required>
 
-       <label for="password">SENHA:</label>
+       <label for="password">SENHA</label>
        <input type="password" id="password" v-model="password" required>
        
        <button type="submit">CADASTRAR</button>
 
      </form>
 
+     <div class="line2"></div>
      <h2>LISTA DE USUÁRIOS</h2>
 
      <ul class="user-list">
@@ -30,8 +32,12 @@
 
      </ul>
 
-   </div> 
-</template> 
+   </div>
+</template>
+
+<style>
+  @import '../assets/style.css';
+</style>
 
 <script>
 export default {
@@ -68,7 +74,7 @@ export default {
           this.password = '';
           this.buscarUsuarios();
         } else {
-          alert({ error: `ERRO AO CRIAR USUÁRIO: ${error.message}` });
+          alert(`ERRO AO CRIAR USUÁRIO!`);
         }
       } catch (error) {
         console.error(error);
@@ -84,7 +90,7 @@ export default {
         if (response.ok) {
           this.users = await response.json();
         } else {
-          alert({ error: `ERRO AO REQUISITAR USUÁRIOS: ${error.message}` });
+          alert(`ERRO AO REQUISITAR USUÁRIOS!`);
         }
       } catch (error) {
         console.error(error);
@@ -116,7 +122,7 @@ export default {
             alert('USUÁRIO ATUALIZADO COM SUCESSO!');
             this.buscarUsuarios();
           } else {
-            alert({ error: `ERRO AO ATUALIZAR USUÁRIO: ${error.message}` });
+            alert(`ERRO AO ATUALIZAR USUÁRIO!`);
           }
         } catch (error) {
           console.error(error);
@@ -140,7 +146,7 @@ export default {
             alert(`O USUÁRIO FOI DELETADO COM SUCESSO!`);
             this.buscarUsuarios();
           } else {
-            alert({ error: `ERRO AO DELETAR USUÁRIO: ${error.message}` });
+            alert(`ERRO AO DELETAR USUÁRIO!`);
           }
         } catch (error) {
           console.error(error);
