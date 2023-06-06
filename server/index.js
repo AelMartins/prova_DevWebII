@@ -107,7 +107,7 @@ app.delete("/excluirUsuario/:id", async(req, res) =>{
        const del = await client.query("DELETE FROM Users WHERE id=$1", [id]);
     
     if(del.rowCount===1){
-        return res.status(200).send(`O USUÁRIO "${name}" FOI DELETADO COM SUCESSO!`);
+        return res.status(200).send(`O USUÁRIO "${client.name}" FOI DELETADO COM SUCESSO!`);
     }
     else{
         return res.status(401("ERRO! USUÁRIO NÃO ENCONTRADO."));
